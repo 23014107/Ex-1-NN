@@ -37,9 +37,35 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
-TYPE YOUR CODE HERE
+```
+import pandas as pd                                                 # Importing Libraries
+import io
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+df=pd.read_csv("Churn_Modelling.csv",index_col="RowNumber")         # Read the dataset from drive
+df.head()
+```
 
-
+```
+df.isnull().sum()                                                   # Finding Missing Values
+```
+```
+df.duplicated().sum()                                               # Check For Duplicates
+```
+```
+df=df.drop(['Surname', 'Geography','Gender'], axis=1)               # Remove Unnecessary Columns
+scaler=StandardScaler()                                             # Normalize the dataset
+df=pd.DataFrame(scaler.fit_transform(df))
+df.head()
+```
+```
+X,Y=df.iloc[:,:-1].values ,df.iloc[:,-1].values                     # Split the dataset into input and output
+print('Input:\n',X,'\nOutput:\n',Y) 
+Xtrain,Xtest,Ytrain,Ytest = train_test_split(X, Y, test_size=0.2)   # Splitting the data for training & Testing
+print("Xtrain:\n" ,Xtrain, "\nXtest:\n", Xtest)                     # X Train and Test
+print("\nYtrain:\n" ,Ytrain, "\nYtest:\n", Ytest)                   # Y Train and Test
+```
 ## OUTPUT:
 SHOW YOUR OUTPUT HERE
 
