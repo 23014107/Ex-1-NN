@@ -1,7 +1,7 @@
-<H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
-<H3>EX. NO.1</H3>
-<H3>DATE</H3>
+NAME : Ramya P
+REGISTER NO : 212223240137
+EX. NO : 1
+DATE : 10/03/2025
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
 
 ## AIM:
@@ -38,38 +38,48 @@ STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
 ```
-import pandas as pd                                                 # Importing Libraries
-import io
+import pandas as pd                                                
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
-df=pd.read_csv("Churn_Modelling.csv",index_col="RowNumber")         # Read the dataset from drive
+df=pd.read_csv("Churn_Modelling.csv",index_col="RowNumber")         
 df.head()
 ```
 
 ```
-df.isnull().sum()                                                   # Finding Missing Values
+df.isnull().sum()                                                   
 ```
 ```
-df.duplicated().sum()                                               # Check For Duplicates
+df.duplicated().sum()                                               
 ```
 ```
-df=df.drop(['Surname', 'Geography','Gender'], axis=1)               # Remove Unnecessary Columns
-scaler=StandardScaler()                                             # Normalize the dataset
+df=df.drop(['Surname', 'Geography','Gender'], axis=1)               
+scaler=StandardScaler()                                             
 df=pd.DataFrame(scaler.fit_transform(df))
 df.head()
 ```
 ```
-X,Y=df.iloc[:,:-1].values ,df.iloc[:,-1].values                     # Split the dataset into input and output
+X,Y=df.iloc[:,:-1].values ,df.iloc[:,-1].values                     
 print('Input:\n',X,'\nOutput:\n',Y) 
-Xtrain,Xtest,Ytrain,Ytest = train_test_split(X, Y, test_size=0.2)   # Splitting the data for training & Testing
-print("Xtrain:\n" ,Xtrain, "\nXtest:\n", Xtest)                     # X Train and Test
-print("\nYtrain:\n" ,Ytrain, "\nYtest:\n", Ytest)                   # Y Train and Test
+Xtrain,Xtest,Ytrain,Ytest = train_test_split(X, Y, test_size=0.2)   
+print("Xtrain:\n" ,Xtrain, "\nXtest:\n", Xtest)                     
+print("\nYtrain:\n" ,Ytrain, "\nYtest:\n", Ytest)                   
 ```
 ## OUTPUT:
-SHOW YOUR OUTPUT HERE
-
-
+## DATASET:
+![image](https://github.com/user-attachments/assets/a7ecbfc3-2363-4fc3-be76-1d142540ec41)
+## NULL VALUES:
+![image](https://github.com/user-attachments/assets/9e7c2a04-a6b5-422d-8867-9f1fc03daddd)
+## NORMALIZED DATA:
+![image](https://github.com/user-attachments/assets/be85853e-db10-474d-a959-5d254027b78e)
+## DATA SPLITTING:
+![Screenshot 2025-03-16 162745](https://github.com/user-attachments/assets/222eb899-c6e4-4702-98d8-74ac006638d1)
+![Screenshot 2025-03-16 163117](https://github.com/user-attachments/assets/310d4097-36d2-4e8f-a124-e412ecb08633)
+## TRAIN AND TEST DATA:
+![Screenshot 2025-03-16 163245](https://github.com/user-attachments/assets/4f4e09e8-1175-40fc-90dd-2a35234616b6)
+![Screenshot 2025-03-17 044509](https://github.com/user-attachments/assets/3496eea3-1534-40e0-b019-6211e09828d9)
+![Screenshot 2025-03-17 080044](https://github.com/user-attachments/assets/907b3fcf-0cf0-4350-8d83-df0f03cd52c0)
+![Screenshot 2025-03-17 080138](https://github.com/user-attachments/assets/7923c70e-cfd8-4bba-8180-13ce29b140b2)
 ## RESULT:
 Thus, Implementation of Data Preprocessing is done in python  using a data set downloaded from Kaggle.
 
