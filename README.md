@@ -1,7 +1,13 @@
 NAME : Ramya P
+
+
 REGISTER NO : 212223240137
 EX. NO : 1
+
+
 DATE : 10/03/2025
+
+
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
 
 ## AIM:
